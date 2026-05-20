@@ -67,7 +67,7 @@ const Navbar = ({ onNavigate }) => {
 
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://github.com/johndev"
+              href="https://github.com/momohbk"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-300"
@@ -76,7 +76,7 @@ const Navbar = ({ onNavigate }) => {
               <GithubIcon />
             </a>
             <a
-              href="https://linkedin.com/in/johndev"
+              href="https://www.linkedin.com/in/mohamed-boukahel-5508172a4/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-300"
@@ -115,13 +115,13 @@ const Navbar = ({ onNavigate }) => {
               </button>
             ))}
             <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-              <a href="https://github.com/johndev" target="_blank" rel="noopener noreferrer" className="p-2 text-slate-400 hover:text-white">
+              <a href="https://github.com/momohbk" target="_blank" rel="noopener noreferrer" className="p-2 text-slate-400 hover:text-white">
                 <GithubIcon />
               </a>
-              <a href="https://linkedin.com/in/johndev" target="_blank" rel="noopener noreferrer" className="p-2 text-slate-400 hover:text-white">
+              <a href="https://www.linkedin.com/in/mohamed-boukahel-5508172a4/" target="_blank" rel="noopener noreferrer" className="p-2 text-slate-400 hover:text-white">
                 <LinkedinIcon />
               </a>
-              <a href="mailto:john@john.dev" className="p-2 text-slate-400 hover:text-white">
+              <a href="mailto:jboukahel14@gmail.com" className="p-2 text-slate-400 hover:text-white">
                 <Mail className="w-5 h-5" />
               </a>
             </div>

@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'john@john.dev', href: 'mailto:john@john.dev' },
+    { icon: Mail, label: 'Email', value: 'jboukahel14@gmail.com', href: 'mailto:jboukahel14@gmail.com' },
     { icon: MapPin, label: 'Location', value: 'Remote | Worldwide', href: null },
   ];
 

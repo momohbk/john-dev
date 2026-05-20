@@ -17,7 +17,7 @@ const Hero = ({ onNavigate }) => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-in-up">
           <Sparkles className="w-4 h-4 text-primary-light" />
-          <span className="text-sm text-primary-light font-medium">Available for Freelance Projects</span>
+          <span className="text-sm text-primary-light font-medium">Senior Full-Stack Developer — 20+ Years Experience</span>
         </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -29,12 +29,12 @@ const Hero = ({ onNavigate }) => {
         </h1>
 
         <p className="text-xl sm:text-2xl text-slate-400 max-w-3xl mx-auto mb-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          Full-Stack Developer
+          Senior Full-Stack Architect
         </p>
 
         <p className="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          I craft premium, high-performance web applications that drive business growth.
-          Specializing in modern React frontends and robust Laravel backends.
+          Over two decades crafting enterprise-grade web applications. I architect scalable systems,
+          lead engineering teams, and deliver solutions that power businesses globally.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
@@ -56,9 +56,9 @@ const Hero = ({ onNavigate }) => {
 
         <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
           {[
-            { number: '50+', label: 'Projects Delivered' },
-            { number: '30+', label: 'Happy Clients' },
-            { number: '5+', label: 'Years Experience' },
+            { number: '80+', label: 'Projects Delivered' },
+            { number: '50+', label: 'Happy Clients' },
+            { number: '20+', label: 'Years Experience' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">
