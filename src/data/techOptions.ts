@@ -22,6 +22,8 @@ export const techOptions: TechOption[] = [
   { value: 'graphql', label: 'GraphQL', color: '#E535AB' },
   { value: 'aws', label: 'AWS', color: '#FF9900' },
   { value: 'redis', label: 'Redis', color: '#DC382D' },
+  { value: 'sqlite', label: 'SQLite', color: '#044A64' },
+  { value: 'express', label: 'Express', color: '#2596be' },
   { value: 'kubernetes', label: 'Kubernetes', color: '#326CE5' },
 ];
 

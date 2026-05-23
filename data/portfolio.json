@@ -42,13 +42,13 @@
     },
     {
       "id": 5,
-      "title": "DineSync Enterprise",
-      "description": "Enterprise hospitality platform serving 500+ restaurants with intelligent table management, predictive wait times, POS integration across 20+ providers, multi-location analytics, and a loyalty engine driving 35% repeat customer rate.",
+      "title": "DineSync",
+      "description": "Restaurant management platform with intelligent table booking, order management, menu customization, real-time availability tracking, and an admin dashboard. Built from scratch with Vue 3, Express, and SQLite.",
       "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-      "techStack": ["vue", "php", "mysql", "tailwind", "redis", "graphql"],
-      "liveUrl": "https://dinesync-demo.vercel.app",
+      "techStack": ["vue", "typescript", "node", "sqlite", "tailwind"],
+      "liveUrl": "#",
       "githubUrl": "https://github.com/momohbk/dinesync",
-      "featured": false
+      "featured": true
     },
     {
       "id": 6,
@@ -79,6 +79,16 @@
       "liveUrl": "https://chatgenie-demo.vercel.app",
       "githubUrl": "https://github.com/momohbk/chatgenie",
       "featured": false
+    },
+    {
+      "id": 9,
+      "title": "BagStyle DZ",
+      "description": "A fully-featured Arabic e-commerce platform for luxury handbags with guest checkout, order tracking, RTL support, admin dashboard, product variants, reviews, banners management, and marketing pixels integration.",
+      "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80",
+      "techStack": ["react", "typescript", "node", "express", "tailwind", "sqlite"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": true
     }
   ],
   "skills": [
