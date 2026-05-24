@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rose: #e11d48;
+  --color-rose-dark: #be123c;
+  --color-rose-light: #fb7185;
+  --color-gold: #d4a574;
+  --color-gold-dark: #b8865c;
+  --color-beige: #f5f0e8;
+  --color-beige-dark: #e8ddd0;
+  --color-cream: #fdfbf7;
+  --font-sans: "Cairo", "Tajawal", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", "Tajawal", system-ui, -apple-system, sans-serif;
+  background-color: var(--color-cream);
+  color: #1f2937;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4a574 #f5f0e8;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-fade-up { animation: fade-up 0.5s ease-out both; }
+.animate-fade-in { animation: fade-in 0.3s ease-out both; }
+.animate-scale-in { animation: scale-in 0.2s ease-out both; }
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(212, 165, 116, 0.2);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0ece6 25%, #e8e0d5 50%, #f0ece6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
