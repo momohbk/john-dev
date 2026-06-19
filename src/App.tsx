@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Skills } from './components/Skills';
+import { ClientProjects } from './components/ClientProjects';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 
@@ -18,6 +19,7 @@ function App() {
       <Navbar onNavigate={handleNavigate} />
       <Hero onNavigate={handleNavigate} />
       <Skills />
+      <ClientProjects />
       <Projects />
       <Contact />
 

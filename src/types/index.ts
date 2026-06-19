@@ -15,6 +15,18 @@ export interface Project {
   featured: boolean;
 }
 
+export interface ClientProject {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  techStack: string[];
+  liveUrl: string;
+  githubUrl: string;
+  features: string[];
+}
+
 export interface Skill {
   name: string;
   level: number;

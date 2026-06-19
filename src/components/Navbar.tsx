@@ -10,6 +10,7 @@ interface NavbarProps {
 const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'skills', label: 'Skills' },
+  { id: 'clients', label: 'Clients' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ] as const;
