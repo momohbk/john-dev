@@ -1,7 +1,7 @@
 import { skillsData } from '../data/projectsData';
 
 const Skills = () => {
-  const categories = ['Frontend', 'Backend', 'Database', 'Tools'];
+  const categories = ['Frontend', 'Backend', 'Database', 'DevOps', 'Tools'];
 
   return (
     <section id="skills" className="py-24 relative">
@@ -16,7 +16,7 @@ const Skills = () => {
             Skills & <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Technologies</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            A comprehensive toolkit built over 5+ years of delivering production-grade applications
+            Two decades of mastery across the full stack — from frontend to infrastructure
           </p>
         </div>
 

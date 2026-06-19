@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "DineSync",
+      "description": "Restaurant management platform built with Vue 3, Express, and MySQL. Features table booking, order management, menu management, real-time availability tracking, and an admin dashboard panel.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+      "techStack": ["vue", "typescript", "node", "mysql", "tailwind", "express"],
+      "liveUrl": "https://github.com/momohbk/dinesync",
+      "githubUrl": "https://github.com/momohbk/dinesync",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "BagStyle DZ",
+      "description": "Arabic e-commerce platform built with React 19, Express, and MySQL. Features guest checkout, order tracking by ID+phone, RTL/Arabic UI, admin dashboard, product variants, reviews moderation, banners management, and marketing pixels integration.",
+      "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80",
+      "techStack": ["react", "typescript", "node", "mysql", "express", "tailwind"],
+      "liveUrl": "https://github.com/momohbk/john-dev/tree/main/projects/shopflow",
+      "githubUrl": "#",
+      "featured": true
+    }
+  ],
+  "skills": [
+    { "name": "React", "level": 98, "icon": "⚛️", "category": "Frontend" },
+    { "name": "Vue.js", "level": 95, "icon": "💚", "category": "Frontend" },
+    { "name": "Next.js", "level": 96, "icon": "▲", "category": "Frontend" },
+    { "name": "JavaScript", "level": 99, "icon": "📜", "category": "Frontend" },
+    { "name": "TypeScript", "level": 97, "icon": "🔷", "category": "Frontend" },
+    { "name": "Tailwind CSS", "level": 98, "icon": "🎨", "category": "Frontend" },
+    { "name": "PHP", "level": 99, "icon": "🐘", "category": "Backend" },
+    { "name": "Laravel", "level": 98, "icon": "🔴", "category": "Backend" },
+    { "name": "Node.js", "level": 95, "icon": "🟢", "category": "Backend" },
+    { "name": "Python", "level": 92, "icon": "🐍", "category": "Backend" },
+    { "name": "GraphQL", "level": 93, "icon": "◈", "category": "Backend" },
+    { "name": "REST APIs", "level": 99, "icon": "🔗", "category": "Backend" },
+    { "name": "MySQL", "level": 98, "icon": "🗄️", "category": "Database" },
+    { "name": "PostgreSQL", "level": 96, "icon": "🐘", "category": "Database" },
+    { "name": "MongoDB", "level": 93, "icon": "🍃", "category": "Database" },
+    { "name": "Redis", "level": 91, "icon": "⚡", "category": "Database" },
+    { "name": "Docker", "level": 92, "icon": "🐳", "category": "DevOps" },
+    { "name": "Kubernetes", "level": 87, "icon": "☸️", "category": "DevOps" },
+    { "name": "AWS", "level": 94, "icon": "☁️", "category": "DevOps" },
+    { "name": "CI/CD", "level": 95, "icon": "🔄", "category": "DevOps" },
+    { "name": "Git / GitHub", "level": 98, "icon": "📦", "category": "Tools" },
+    { "name": "Figma", "level": 85, "icon": "🎯", "category": "Tools" }
+  ]
+}

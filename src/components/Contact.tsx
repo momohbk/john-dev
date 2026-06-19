@@ -1,64 +1,100 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Send, Mail, MapPin, CheckCircle, Loader2 } from 'lucide-react';
+import { SectionWrapper, SectionHeading } from './SectionHeading';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [status, setStatus] = useState('idle');
+type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
-  const handleSubmit = async (e) => {
+const initialFormData: FormData = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
+
+const contactInfo = [
+  {
+    icon: Mail,
+    label: 'Email',
+    value: 'jboukahel14@gmail.com',
+    href: 'mailto:jboukahel14@gmail.com',
+  },
+  {
+    icon: MapPin,
+    label: 'Location',
+    value: 'Remote | Worldwide',
+    href: null,
+  },
+] as const;
+
+export function Contact() {
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [status, setStatus] = useState<FormStatus>('idle');
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    },
+    [],
+  );
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      return;
+    }
+
     setStatus('loading');
 
-    // API integration - connect to your backend
-    // const response = await fetch('https://api.john.dev/contact', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(formData),
-    // });
+    try {
+      // TODO: Replace with actual API endpoint
+      // const response = await fetch(import.meta.env.VITE_CONTACT_API, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(formData),
+      // });
+      // if (!response.ok) throw new Error('Failed to send message');
 
-    setTimeout(() => {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
       setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData(initialFormData);
       setTimeout(() => setStatus('idle'), 3000);
-    }, 1500);
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
-  const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'jboukahel14@gmail.com', href: 'mailto:jboukahel14@gmail.com' },
-    { icon: MapPin, label: 'Location', value: 'Remote | Worldwide', href: null },
-  ];
+  const inputClass =
+    'w-full px-4 py-3 rounded-xl bg-surface/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all';
 
   return (
-    <section id="contact" className="py-24 relative">
+    <SectionWrapper id="contact">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4">
-            Get In Touch
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Let's Build Something <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Amazing</span>
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Let's discuss how we can work together.
-          </p>
-        </div>
+        <SectionHeading
+          badge="Get In Touch"
+          title="Let's Build Something"
+          highlighted="Amazing"
+          description="Have a project in mind? I'd love to hear about it. Let's discuss how we can work together."
+          badgeColor="accent"
+        />
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2 space-y-6">
-            {contactInfo.map((info, i) => (
+            {contactInfo.map((info) => (
               <div
-                key={i}
+                key={info.label}
                 className="flex items-start gap-4 p-5 rounded-2xl bg-surface-light/30 border border-white/5 backdrop-blur-sm hover:border-primary/20 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -67,7 +103,10 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-slate-500 mb-1">{info.label}</p>
                   {info.href ? (
-                    <a href={info.href} className="text-white font-medium hover:text-primary-light transition-colors">
+                    <a
+                      href={info.href}
+                      className="text-white font-medium hover:text-primary-light transition-colors"
+                    >
                       {info.value}
                     </a>
                   ) : (
@@ -88,58 +127,71 @@ const Contact = () => {
           <div className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
+              noValidate
               className="p-6 sm:p-8 rounded-3xl bg-surface-light/30 border border-white/10 backdrop-blur-xl shadow-2xl"
             >
               <div className="grid sm:grid-cols-2 gap-5 mb-5">
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                    Your Name
+                  </label>
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-surface/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                    className={inputClass}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                    Email Address
+                  </label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-surface/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                    className={inputClass}
                   />
                 </div>
               </div>
 
               <div className="mb-5">
-                <label className="block text-sm font-medium text-slate-300 mb-2">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+                  Subject
+                </label>
                 <input
+                  id="subject"
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
                   placeholder="Project Inquiry"
-                  className="w-full px-4 py-3 rounded-xl bg-surface/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                  className={inputClass}
                 />
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                  Message
+                </label>
                 <textarea
+                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   rows={5}
                   placeholder="Tell me about your project..."
-                  className="w-full px-4 py-3 rounded-xl bg-surface/50 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                  className={`${inputClass} resize-none`}
                 />
               </div>
 
@@ -149,9 +201,11 @@ const Contact = () => {
                 className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                   status === 'success'
                     ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                    : status === 'loading'
-                    ? 'bg-primary/50 text-white/70 cursor-wait'
-                    : 'bg-gradient-to-r from-primary to-primary-dark text-white hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02]'
+                    : status === 'error'
+                      ? 'bg-red-500/20 text-red-400 border border-red-500/30'
+                      : status === 'loading'
+                        ? 'bg-primary/50 text-white/70 cursor-wait'
+                        : 'bg-gradient-to-r from-primary to-primary-dark text-white hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02]'
                 }`}
               >
                 {status === 'loading' ? (
@@ -164,6 +218,11 @@ const Contact = () => {
                     <CheckCircle className="w-5 h-5" />
                     Message Sent!
                   </>
+                ) : status === 'error' ? (
+                  <>
+                    <Loader2 className="w-5 h-5" />
+                    Failed — Try Again
+                  </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
@@ -175,8 +234,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
-};
-
-export default Contact;
+}
