@@ -9,7 +9,7 @@ export const clientProjectsData: ClientProject[] = [
       'A full-featured restaurant management system with real-time table booking, menu management, order tracking, and an admin dashboard. Built with a robust MySQL backend, the platform handles reservations, menu item availability, and customer management with JWT-based authentication.',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
     techStack: ['vue', 'typescript', 'node', 'mysql', 'tailwind', 'express'],
-    liveUrl: 'http://localhost:3001',
+    liveUrl: 'https://github.com/momohbk/dinesync',
     githubUrl: 'https://github.com/momohbk/dinesync',
     features: [
       'Real-time table reservations',
@@ -27,8 +27,8 @@ export const clientProjectsData: ClientProject[] = [
       'A complete e-commerce platform for a handbag store, featuring Arabic RTL UI, guest checkout, order tracking, and a full admin panel. Powered by MySQL with products, variants, reviews, banners, and marketing pixels — all managed through a RESTful Express API.',
     image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80',
     techStack: ['react', 'typescript', 'node', 'mysql', 'tailwind', 'express'],
-    liveUrl: 'http://localhost:3002',
-    githubUrl: '#',
+    liveUrl: 'https://github.com/momohbk/john-dev/tree/main/projects/shopflow',
+    githubUrl: 'https://github.com/momohbk/john-dev/tree/main/projects/shopflow',
     features: [
       'Arabic RTL interface',
       'Guest checkout flow',
